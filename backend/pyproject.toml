@@ -1,0 +1,29 @@
+[project]
+name = "vid-gen-backend"
+version = "0.1.0"
+description = "vid-gen backend: topic -> mp4 pipeline + FastAPI"
+readme = "README.md"
+authors = [
+    { name = "james_87b0", email = "james@cca19.com" }
+]
+requires-python = ">=3.13"
+dependencies = [
+    "edge-tts>=7.3.1",
+    "fastapi>=0.143.1",
+    "httpx>=0.28.1",
+    "ollama>=0.6.3",
+    "pydantic-settings>=2.16.0",
+    "uvicorn[standard]>=0.54.0",
+]
+
+[tool.uv]
+package = false
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]

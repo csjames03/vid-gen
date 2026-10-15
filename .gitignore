@@ -1,0 +1,20 @@
+# env / secrets
+.env
+
+# data (downloads, renders, cache)
+data/
+
+# python
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+
+# node / next
+node_modules/
+.next/
+out/
+
+# os
+.DS_Store
+Thumbs.db

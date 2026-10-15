@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+/* Plain, neutral palette with one accent. Light by default, dark follows the OS. */
+:root {
+  --bg: #fafaf9;
+  --surface: #ffffff;
+  --subtle: #f2f1ef;
+  --border: #e4e2df;
+  --muted: #6f6b66;
+  --fg: #1b1a18;
+  --accent: #d4480f;
+  --ok: #2f7d4f;
+  --warn: #a86a06;
+  --bad: #c2362d;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #121211;
+    --surface: #1a1a19;
+    --subtle: #222220;
+    --border: #2e2d2b;
+    --muted: #95918b;
+    --fg: #ecebe8;
+    --accent: #ff6a2b;
+    --ok: #6cc08b;
+    --warn: #e0a83e;
+    --bad: #f0645d;
+  }
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-subtle: var(--subtle);
+  --color-border: var(--border);
+  --color-muted: var(--muted);
+  --color-fg: var(--fg);
+  --color-accent: var(--accent);
+  --color-ok: var(--ok);
+  --color-warn: var(--warn);
+  --color-bad: var(--bad);
+
+  --font-sans: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+}
+
+html {
+  color-scheme: light dark;
+}
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-sans);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.scroll-thin {
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) transparent;
+}
